@@ -1,34 +1,29 @@
-// const clock = document.querySelector('.clock');
+const clock = document.querySelector(".clock");
 
-// let interval;
+let interval;
 
+function startClock() {
+  const showTime = new Date("February 3, 2023 19:30:00");
+  const actualTime = new Date();
 
-// function startClock() {
-// const data = new Date();
-// let hours = data.getHours();
-// let minutes = data.getMinutes();
-// let seconds = data.getSeconds();
+  const countToShow = showTime.getTime();
 
+  console.log(countToShow);
+}
 
-// if(hours < 9){
-//     hours = `0${hours}`
-// }
-// if(minutes < 9){
-//     minutes = `0${minutes}`
-// }
-// if(seconds < 9){
-//     seconds = `0${seconds}`
-// }
+const actualTimeCreator = () => {
+  const date = new Date();
+  const day = date.getDay();
+  const month = date.getMonth();
+  const year = date.getFullYear();
 
-// if(hours > 9){
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
 
-//     clock.innerHTML = `0${hours}: ${minutes}: ${seconds}`
-// }
+  console.log(date.getFullYear());
+};
 
-// clock.innerHTML = `${hours}: ${minutes}: ${seconds}`
-// }
+actualTimeCreator();
 
-
-//  interval = setInterval(startClock, 1000);
-
-
+interval = setInterval(startClock, 1000);
