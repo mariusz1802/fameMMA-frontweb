@@ -34,7 +34,7 @@ function compareDates(){
   
   const day = 24 * 60 * 60 * 1000;
   const hour = 60 * 60 * 1000;
-  const minute = 60 + 1000;
+  const minute =  1000 / 60;
   const second = 1*1000;
 
   
@@ -43,14 +43,12 @@ function compareDates(){
 
   const timeLeft  = show - actual
 
-  const daysLeft = timeLeft / day;
-  const hoursLeft = timeLeft / hour;
-  const minutesLeft = timeLeft / minute;
-  const secondsLeft = timeLeft / second
+  const daysLeft = Math.floor(timeLeft / day);
+  const hoursLeft = Math.floor(timeLeft / hour % 24);
 
-
-
-
+  const minutesLeft = Math.floor((timeLeft / (1000 / 60)) %  60);
+  const secondsLeft = Math.floor((timeLeft/ 1000)% 60);
+console.log(minutesLeft);
 
 }
 
@@ -59,5 +57,9 @@ function compareDates(){
 
 
 
-
 interval = setInterval( compareDates, 1000);
+
+
+
+
+
