@@ -31,11 +31,13 @@ const actualTimeCreator = () => {
 };
 
 function compareDates(){
-  
-  const day = 24 * 60 * 60 * 1000;
-  const hour = 60 * 60 * 1000;
-  const minute =  1000 / 60;
-  const second = 1*1000;
+
+const day = document.querySelector('.days')
+const hour = document.querySelector('.hours')
+const minute = document.querySelector('.minutes')
+const second = document.querySelector('.seconds')
+
+
 
   
   const show = startClock();
@@ -43,12 +45,31 @@ function compareDates(){
 
   const timeLeft  = show - actual
 
-  const daysLeft = Math.floor(timeLeft / day);
-  const hoursLeft = Math.floor(timeLeft / hour % 24);
+  const daysLeft = Math.floor(timeLeft / (1000*60*60*24));
+  const hoursLeft = Math.floor(timeLeft / (1000*60*60) % 24);
 
-  const minutesLeft = Math.floor((timeLeft / (1000 / 60)) %  60);
+  const minutesLeft = Math.floor((timeLeft /1000/60) %  60);
   const secondsLeft = Math.floor((timeLeft/ 1000)% 60);
-console.log(minutesLeft);
+
+
+day.innerHTML = daysLeft;
+hour.innerHTML  = hoursLeft;
+minute.innerHTML = minutesLeft;
+second.innerHTML = secondsLeft;
+
+if(daysLeft < 10){
+  day.innerHTML = "0" + daysLeft;
+}
+if(hoursLeft < 10) {
+  hour.innerHTML = "0" + hoursLeft
+}
+if(minutesLeft < 10) {
+  minute.innerHTML = "0" + minutesLeft;
+}
+if(secondsLeft < 10) {
+  second.innerHTML = "0" + secondsLeft;
+}
+
 
 }
 

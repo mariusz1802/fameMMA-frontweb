@@ -140,6 +140,8 @@ button:nth-child(3) span{
         justify-content: center;
 }
 
+
+
 .side{
     margin: 20px 50px;
     display: flex;
@@ -165,4 +167,13 @@ button:nth-child(3) span{
 .fighter:nth-of-type(3){
     color: rgb(204, 204, 204);
     margin-top: -30px;
+}
+.apps {
+    width: 400px;
+    margin: auto;
+    border: 1px solid white;
+}
+
+img {
+    width: 300px;
 }
